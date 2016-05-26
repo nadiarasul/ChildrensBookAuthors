@@ -4,6 +4,7 @@ var concat = require('gulp-concat');
 var babel = require('gulp-babel');
 var browserSync = require('browser-sync').create();
 var autoprefixer = require('gulp-autoprefixer');
+var reload = browserSync.reload;
 
 gulp.task('styles', function(){
 	return gulp.src('./dev/styles/**/*.scss')
@@ -17,15 +18,15 @@ gulp.task('styles', function(){
 
 gulp.task('watch', function(){
 	gulp.watch('./dev/styles/**/*.scss', ['styles']);
-	gulp.watch('./dev/scripts/main.js', ['scripts']);
+	gulp.watch('./dev/js/script.js', ['scripts']);
 });
 
 gulp.task('scripts', function(){
-	return gulp.src('./dev/scripts/main.js')
+	return gulp.src('./dev/js/script.js')
 		.pipe(babel({
 			presets: ['es2015'],
 		}))
-		.pipe(gulp.dest('./public/scripts/'))
+		.pipe(gulp.dest('./public/js/'))
 		    .pipe(reload({stream: true}));
 });
 
