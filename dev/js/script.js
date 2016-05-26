@@ -28,10 +28,9 @@ var idc= '';
 
 childrenApp.init = function(){
    
-
      $('.ellis').on('click', function (){
-        $('.content').hide();
-        $('.content').show();
+        $('#main').hide();
+        $('#content').show();
     	// e.preventDefault();
     	childrenApp.getAuthor('95863');
 
@@ -82,18 +81,25 @@ childrenApp.getAuthor = function(authorId){
             xmlToJSON: true,   
         }
     }).then(function(res) {
-        var bookReturn = res.GoodreadsResponse.author.books;
-        bookReturn.book.forEach(function(bookItem){
-            console.log(bookItem.title);
-            console.log(bookItem.description);
+        childrenApp.displayInfo(res.GoodreadsResponse.author);
 
-        });
-        var authorHometown = res.GoodreadsResponse.author.hometown;
-        var birthday = res.GoodreadsResponse.author.
-        console.log(bookReturn);
-        console.log(authorHometown);
     }); 
 };
+
+childrenApp.displayInfo = function (authorInfo){
+        var bookReturn = authorInfo.books.book;
+
+        bookReturn.forEach(function(bookItem){
+            console.log(bookItem.title);
+            // console.log(bookItem.description);
+
+        });
+        // var authorHometown = res.GoodreadsResponse.author.hometown;
+        // var birthday = res.GoodreadsResponse.author;
+        console.log(bookReturn);
+        console.log(authorHometown);
+
+}
 
 var author = [
 	{
