@@ -14,6 +14,10 @@ var childrenApp = {};
 var idc= '';
 
 
+// var ellis = {
+//     authorId = 953
+// }
+
 // Deborah Ellis = 95863
 // Kenneth Oppel = 88922
 //  Vickie Grant = 611315
@@ -25,33 +29,37 @@ var idc= '';
 childrenApp.init = function(){
    
 
-    $('.ellis').on('click', function (){
+     $('.ellis').on('click', function (){
     	// e.preventDefault();
     	childrenApp.getAuthor('95863');
-    	var 
-    
+
+        var bookTitle = $('<h4>').text(bookItem.title);
+
+
     });
     $('.oppel').on('click', function (){
     	// e.preventDefault();
-    	childrenApp.getAuthor('88922')
+    	childrenApp.getAuthor('88922');
     
     });
     $('.grant').on('click', function (){
     	// e.preventDefault();
-    	childrenApp.getAuthor('611315')
+    	childrenApp.getAuthor('611315');
     
     });
     $('.young').on('click', function (){
     	// e.preventDefault();
-    	childrenApp.getAuthor('4625304')
+    	childrenApp.getAuthor('4625304');
     
     });
     $('.gay').on('click', function (){
     	// e.preventDefault();
-    	childrenApp.getAuthor('80974')
-    
+    	childrenApp.getAuthor('80974');
+        
     });
 };
+
+
 
 
 
@@ -72,10 +80,18 @@ childrenApp.getAuthor = function(authorId){
             xmlToJSON: true,   
         }
     }).then(function(res) {
-        console.log(res);
-     	
-    });
-   };
+        var bookReturn = res.GoodreadsResponse.author.books;
+        bookReturn.book.forEach(function(bookItem){
+            console.log(bookItem.title);
+            console.log(bookItem.description);
+
+        });
+        var authorHometown = res.GoodreadsResponse.author.hometown;
+        var birthday = res.GoodreadsResponse.author.
+        console.log(bookReturn);
+        console.log(authorHometown);
+    }); 
+};
 
 var author = [
 	{
@@ -101,6 +117,8 @@ var author = [
 
 
 ]
+
+
 
 
 
