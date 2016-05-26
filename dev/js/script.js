@@ -30,6 +30,8 @@ childrenApp.init = function(){
    
 
      $('.ellis').on('click', function (){
+        $('.content').hide();
+        $('.content').show();
     	// e.preventDefault();
     	childrenApp.getAuthor('95863');
 
