@@ -2,90 +2,80 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Children's Canadian Book Authors</title>
+	<link href='https://fonts.googleapis.com/css?family=Quicksand:400,300|Lato:400,300,100' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="styles/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Children's Canadian Book Authors</title>
 </head>
 <body>
 <!-- this is the first main page -->
 <section class="wrapper" id="main">
-
-	<h1>So Books. Many Words.</h1>
+	<img src="images/icon.png" alt="">
+	<div class="main-text">
+	<h1 class="fancy">Canadian Authors for Kids</h1>
+	<h2>The very best in Canadian literature for children.</h2>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt optio et, soluta unde dolor, cumque porro voluptate vel earum necessitatibus, aliquid vero omnis non eius dignissimos praesentium beatae, numquam. Inventore?</p>
-	
-	<button class="ellis">Deborah Ellis</button>
-	<button class= "gay">Marie-Louise Gay</button>
-	<button class="grant">Vickie Grant</button>
-	<button class="oppel">Kenneth Oppel</button>
-	<button class= "young">Cybèle Young</button>
-
+	</div>
+	<div class="authorsHome">
+		<div>
+			<img src="images/deborah_ellis.jpeg" alt="">
+			<button class="ellis">Deborah Ellis</button>
+		</div>
+		<div>
+			<img src="images/marie_louise_gay.jpg" alt="">
+			<button class= "gay">Marie-Louise Gay</button>
+		</div>
+		<div>
+			<img src="images/vicki_grant.jpg" alt="">
+			<button class="grant">Vickie Grant</button>
+		</div>
+		<div>
+			<img src="images/kenneth_oppell.jpg" alt="">
+			<button class="oppel">Kenneth Oppel</button>
+		</div>
+		<div>
+			<img src="images/cybèle _young.jpeg" alt="">
+			<button class= "young">Cybèle Young</button>
+		</div>
 	</div>
 </section>
 <!-- this is for the chosen authors information -->
 <section class="wrapper" id="content">
 	<div class="top">
-		<p class="lastName"></p>
-		<p>Highlighted Works</p>
+		<p><a href="#main" class="home">Home</a></p>
+		<!-- <p>Highlighted Works</p> -->
 	</div>
+
 	<div class= "authorInfo">
 		<h2 class="authorName"></h2>
-		<p class="birthday"></p>
-		<h3 class=hometown></h3>
+		<div class="authorTags">
+			<p class="birthday"></p>
+			<h3 class="hometown"></h3>
+		</div>
 		<img class="authorPhoto" alt="">
 		<div class= "authorBio"></div>
-		<a>Read More...</a>
+		<a class="readMore" target="_blank">View on GoodReads</a>
 		<blockquote class="authorQuote"></blockquote>
 	</div>
+
 	<div class="bookInfo">
-		<h2 class="bookName"></h2>
-		<p class="bookDescription"></p>
+		<div class="bookName"></div>
+		<div class="bookDescription"></div>
 		<img class="featuredImage" alt="">
-		<div class="bookGallery">
-			<div class="book book1">
-				<img class="bookImage" alt="">
-				<p class="bookTag"></p>
-			</div>
-			<div class="book book2">
-				<img class="bookImage" alt="">
-				<p class="bookTag"></p>
-			</div>
-			<div class="book book3">
-				<img class="bookImage" alt="">
-				<p class="bookTag"></p>
-			</div>
-			<div class="book book4">
-				<img class="bookImage" alt="">
-				<p class="bookTag"></p>
-			</div>
-			<div class="book book5">
-				<img class="bookImage" alt="">
-				<p class="bookTag"></p>
-			</div>
-			<div class="book book6">
-				<img class="bookImage" alt="">
-				<p class="bookTag"></p>
-			</div>
-				<a href="">See more works...</a>
-			</div>
-		</div>
+		<div class="bookGallery"></div>
+	</div>
 
-		<article class="bottomNames wrapper">
-			
-	
-
-			<button class="ellis">Deborah Ellis</button>
-			<button class= "gay">Marie-Louise Gay</button>
-			<button class="grant">Vickie Grant</button>
-			<button class="oppel">Kenneth Oppel</button>
-			<button class= "young">Cybèle Young</button>
-
-		</article>
+	<article class="bottomNames wrapper">
+		<button class="ellis">Deborah Ellis</button>
+		<button class= "gay">Marie-Louise Gay</button>
+		<button class="grant">Vickie Grant</button>
+		<button class="oppel">Kenneth Oppel</button>
+		<button class= "young">Cybèle Young</button>
+	</article>
 
 
 	</section>
 <!-- this is for the bottom of the page that will display the five authors names -->
-	
-
-
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
