@@ -9,7 +9,7 @@ var works = [
         },
         {
             isbn: '0888995423',
-            img: 'images/de_Mud_City.jpg',
+            img: 'images/de_Mud_Cuty.jpg',
         },        
         {
             isbn: '1554982979',
@@ -105,11 +105,11 @@ var works = [
         },        
         {
             isbn: '0888997108',
-            img: 'images/mlg_Stella_Fairy_Of_The_Forest.jpg',
+            img: 'images/mlg_Stella_Fairty_Of_The_Forest.jpg',
         },        
         {
             isbn: '0888999062',
-            img: 'images/mlg_When_Stells_Was_Very_Very_Small.jpg',
+            img: 'images/mlg_When_Stella_Was_Very_Very_Small.jpg',
         },        
         {
             isbn: '0888999941',
@@ -137,14 +137,14 @@ var authors = [
 {
     name: 'Vickie Grant',
     id: '611315',
-    dob: '',
+    dob: 'Not available',
     hometown: 'Halifax, Nova Scotia',        
     bio: '<p>Vicki Grant has been called “a superb storyteller” (Canadian Children’s Book News) with “a wonderful sense of comedy” (CM Magazine) and “one of the funniest writers working today” (Vancouver Sun).</p><p>The author of fourteen books, her works have been translated into seven languages, and shortlisted for numerous awards in both Canada and the United States. Grant has also written almost 100 episode of children’s television, and is set to begin work on her third documentary.</p><p>She lives in Halifax, Nova Scotia.</p>',
 },
 {
     name: 'Cybèle Young',
     id: '4625304',
-    dob: '',
+    dob: 'Not available',
     hometown: 'Toronto Ontario',
     bio: '<p>A Toronto-based artist and author, Cybèle Young’s work draws heavily on her illustration and storytelling strengths. Since graduating from sculpture and printmaking at the Ontario College of Art and Design in 1995, Young\'s artwork has appeared in galleries around the world, such as New York, LA, Miami, London, Stockholm, Japan, Singapore, Korea and across Canada. Her 2011 release ‘Ten Birds’ won the Governor General’s Award for Illustration  in 2011.</p><p>"I fell in love with children’s books when I was pregnant,” she told Quill & Quire in 2012. “And as a parent, there’s nothing more heavenly than knowing your kid, who could be climbing the walls, will sit happily in your lap if you offer them a book, and you can both be transported to another world."</p>',
 },
@@ -163,17 +163,54 @@ var bookTitle;
 
 var childrenApp = {};
 var idc= '';
-
+// var ellis = {
+//     authorId = 953
+// }
+// Deborah Ellis = 95863
+// Kenneth Oppel = 88922
+//  Vickie Grant = 611315
+// Cybèle Young = 4625304
+// Marie-Louise Gay = 80974
+// book list, date of birth, hometown 
 childrenApp.init = function(){
-   $('.authorsClick, button').on('click', function(e) {
-     e.preventDefault();
+
+   $('.ellis').on('click', function (){
     $('#main').hide();
-    $('#content').show();  
-    $('.bookGallery').empty();     
-    $('button').removeClass('active');
-     var authorId = $(e.currentTarget).data('author-id');
-     childrenApp.getAuthor(authorId);
-   })
+    $('#content').show();
+        // e.preventDefault();
+     $('#main').hide();
+    $('#content').show();
+        childrenApp.getAuthor('95863');
+        // var bookTitle = $('<h4>').text(bookItem.title);
+    });
+   $('.oppel').on('click', function (){
+        // e.preventDefault();
+    $('#main').hide();
+    $('#content').show();        
+        childrenApp.getAuthor('88922');
+
+    });
+   $('.grant').on('click', function (){
+        // e.preventDefault();
+     $('#main').hide();
+    $('#content').show();       
+        childrenApp.getAuthor('611315');
+
+    });
+   $('.young').on('click', function (){
+        // e.preventDefault();
+    $('#main').hide();
+    $('#content').show();        
+        childrenApp.getAuthor('4625304');
+
+    });
+   $('.gay').on('click', function (){
+        // e.preventDefault();
+     $('#main').hide();
+    $('#content').show();       
+        childrenApp.getAuthor('80974');
+        
+    });
 };
 
 var apiKey ='0MVd0sx7a0AVeLLDN8lPXg';
@@ -199,7 +236,6 @@ childrenApp.getAuthor = function(authorId){
 childrenApp.getBookUrl = function(book) {
     var match = works.filter(function(work) {
         return work.isbn === book.isbn
-        console.log(book.isbn);
     })
     if(match.length > 0) {
         return match[0].img;
@@ -210,18 +246,30 @@ childrenApp.getBookUrl = function(book) {
 
 childrenApp.displayInfo = function (authorInfo){
     console.log(authorInfo);
+            // var i = 0
             var bookReturn = authorInfo.books.book;
+        // bookReturn.forEach(function(bookItem){
             var loopLength = 6;
             if(bookReturn.length < 6) {
                 loopLength = bookReturn.length;
             }
             for (var i = 0; i < loopLength; i ++) {
+                console.log(bookReturn[i].title);
+            // console.log(bookReturn[i].)
             if(bookReturn[i].description.length !== undefined) {
                 bookTitle = $('<h2>').html(bookReturn[i].title);
                 var bookDescription = $('<p>').html(cleanup(bookReturn[i].description));
                 var theDesc = cleanup(bookReturn[i].description);
+
+
                 var bookImageUrl = childrenApp.getBookUrl(bookReturn[i]);
                 var bookImage = $('<img>').attr('src', bookImageUrl).data('desc', theDesc).data('name', bookTitle);
+
+                // $.data(bookImage, 'desc', theDesc)
+
+                // var pDescription = newBookDescription.replace(/&lt;br&gt;/ig," "); 
+                // var bookDescription = $('<p>').html(cleanup(bookDescription));
+                // var bookDiv = $('<div>').addClass()
                 $('.bookName').html(bookTitle);
                 $('.bookDescription').html(bookDescription);
                 $('.bookGallery').append(bookImage);
@@ -229,19 +277,18 @@ childrenApp.displayInfo = function (authorInfo){
                 console.log($.data(bookImage))
             }
         }
-        $('button[data-author-id='+authorInfo.id+']').addClass('active');
         var authorHometown = authorInfo.hometown;
         console.log(authorHometown);
         var authorLink = authorInfo.link;
         console.log(authorLink);
         var authorBirthday = authorInfo.born_at;
-        var authorName = $('<h2>').text(authorInfo.name);
+        var authorName = authorInfo.name;
         var authorID = authorInfo.id;
         var authorBioMatch = authors.filter(function(author){
             return author.id === authorID
         });
         $('.readMore').attr('href', authorLink);
-        $('.authorName').html(authorName);
+        $('.authorName').text(authorName);
         $('.birthday').text(authorBioMatch[0].dob);
         $('.hometown').text(authorBioMatch[0].hometown);
         $('.authorBio').html(authorBioMatch[0].bio);
@@ -256,7 +303,6 @@ $('button').click(function() {
     $('.bottomNames .'+author).addClass("active");
     $('.bookGallery').empty();
 });
-
 
 $('.home').click(function(){
     $('#content').hide();

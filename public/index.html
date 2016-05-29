@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<link rel="icon" type="image/png" href="images/favicon.png" sizes="32x32">
 	<link href='https://fonts.googleapis.com/css?family=Quicksand:400,300|Lato:400,300,100' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="styles/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,27 +18,28 @@
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt optio et, soluta unde dolor, cumque porro voluptate vel earum necessitatibus, aliquid vero omnis non eius dignissimos praesentium beatae, numquam. Inventore?</p>
 	</div>
 	<div class="authorsHome">
-		<div>
-			<img src="images/deborah_ellis.jpeg" alt="">
+		<div class="authorsClick" data-author-id='95863'>
+			<img src="images/deborah_ellis.jpeg" alt="Deborah Ellis">
 			<button class="ellis">Deborah Ellis</button>
 		</div>
-		<div>
-			<img src="images/marie_louise_gay.jpg" alt="">
+		<div class="authorsClick" data-author-id='80974'>
+			<img src="images/marie_louise_gay.jpg" alt="Marie-Louise Gay">
 			<button class= "gay">Marie-Louise Gay</button>
 		</div>
-		<div>
-			<img src="images/vicki_grant.jpg" alt="">
+		<div class="authorsClick" data-author-id='611315'>
+			<img src="images/vicki_grant.jpg" alt="Vickie Grant">
 			<button class="grant">Vickie Grant</button>
 		</div>
-		<div>
-			<img src="images/kenneth_oppell.jpg" alt="">
+		<div class="authorsClick" data-author-id='88922'>
+			<img src="images/kenneth_oppell.jpg" alt="Kenneth Oppel">
 			<button class="oppel">Kenneth Oppel</button>
 		</div>
-		<div>
-			<img src="images/cybèle _young.jpeg" alt="">
+		<div class="authorsClick" data-author-id='4625304'>
+			<img src="images/cybèle _young.jpeg" alt="Cybèle Young">
 			<button class= "young">Cybèle Young</button>
 		</div>
 	</div>
+	<footer><p>Built by Emma Coldwell, Nadia Rasul & Nicholas Cameron</p></footer>
 </section>
 <!-- this is for the chosen authors information -->
 <section class="wrapper" id="content">
@@ -47,7 +49,7 @@
 	</div>
 
 	<div class= "authorInfo">
-		<h2 class="authorName"></h2>
+		<div class="authorName"></div>
 		<div class="authorTags">
 			<p class="birthday"></p>
 			<h3 class="hometown"></h3>
@@ -62,15 +64,17 @@
 		<div class="bookName"></div>
 		<div class="bookDescription"></div>
 		<img class="featuredImage" alt="">
-		<div class="bookGallery"></div>
+		<div class="bookGallery">
+			<img src="images/cy_A_Few_Bites.jpg" class="bookDisplay" alt="">
+		</div>
 	</div>
 
 	<article class="bottomNames wrapper">
-		<button class="ellis">Deborah Ellis</button>
-		<button class= "gay">Marie-Louise Gay</button>
-		<button class="grant">Vickie Grant</button>
-		<button class="oppel">Kenneth Oppel</button>
-		<button class= "young">Cybèle Young</button>
+		<button data-author-id='95863' class="ellis">Deborah Ellis</button>
+		<button data-author-id='80974' class= "gay">Marie-Louise Gay</button>
+		<button data-author-id='611315' class="grant">Vickie Grant</button>
+		<button data-author-id='88922' class="oppel">Kenneth Oppel</button>
+		<button data-author-id='4625304' class= "young">Cybèle Young</button>
 	</article>
 
 
