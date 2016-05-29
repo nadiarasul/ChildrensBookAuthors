@@ -1,6 +1,4 @@
 node_modules
-public/js/*.js
-public/styles/*.css
 .sass-cache/
 *.css.map
 
