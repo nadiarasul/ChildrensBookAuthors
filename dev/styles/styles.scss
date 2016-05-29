@@ -76,35 +76,35 @@ button:active,
 	position:relative;
 }
 .fancy:after{
-  content: "";
-  position: absolute;
-  height: 5px;
-  border-bottom: 4px solid $yellow;
-  border-top: 4px solid $yellow;
-  top: 100%;
-  left:0;
-  width: 100%;
+	content: "";
+	position: absolute;
+	height: 5px;
+	border-bottom: 4px solid $yellow;
+	border-top: 4px solid $yellow;
+	top: 100%;
+	left:0;
+	width: 100%;
 }
 
 .bookName h2:after,
 .authorName:after{
-  content: "";
-  position: absolute;
-  height: 5px;
-  border-bottom: 4px solid $yellow;
-  top: 100%;
-  left:0;
-  width: 100%;
+	content: "";
+	position: absolute;
+	height: 5px;
+	border-bottom: 4px solid $yellow;
+	top: 100%;
+	left:0;
+	width: 100%;
 }
 .bookName h2:before,
 .authorName:before{
-  content: "";
-  position: absolute;
-  height: 5px;
-  border-top: 4px solid $yellow;
-  bottom: 100%;
-  left:0;
-  width: 100%;
+	content: "";
+	position: absolute;
+	height: 5px;
+	border-top: 4px solid $yellow;
+	bottom: 100%;
+	left:0;
+	width: 100%;
 }
 
 .authorsHome {
@@ -113,10 +113,10 @@ button:active,
 	align-items:center;
 
 	div{
-	    width: calc(20% - 8px);
-	    text-align: center;
-	    margin: 4px;
-	
+		width: calc(20% - 8px);
+		text-align: center;
+		margin: 4px;
+		
 		img{
 			width: 100%;
 			display: block;
@@ -187,8 +187,8 @@ button:active,
 
 	img{
 		margin: 5px;
-    	width: calc(33.3% - 10px);
-    	
+		width: calc(33.3% - 10px);
+		
 	}
 }
 
@@ -253,9 +253,9 @@ footer {
 
 	.authorsHome {
 		flex-wrap:wrap;
-	    div{
-		    width: calc(33.3% - 8px);
-		    margin: 8px 4px;
+		div{
+			width: calc(33.3% - 8px);
+			margin: 8px 4px;
 		}
 	}
 	button {
